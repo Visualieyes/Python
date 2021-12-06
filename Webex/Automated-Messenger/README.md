@@ -1,0 +1,1 @@
+This program uses Webex API to automatically send a message to a list of people/ emails.
