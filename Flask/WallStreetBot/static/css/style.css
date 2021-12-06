@@ -1,0 +1,97 @@
+
+.footer{
+    padding: 20px 0px;
+    color: whitesmoke !important;
+}
+
+
+.post-purple-text{
+    color: #6C63FF;
+}
+
+ .post-purple-background{
+    background-color: #6C63FF !important;
+}
+
+.purple-button{
+    background-color: #6C63FF !important;
+    border-color: #6C63FF !important;
+    transition: 0.3s;
+}
+
+.purple-button:hover{
+    opacity: .9;
+}
+
+/* .post-green-text{
+    color: #00BFA6;
+}
+.post-green-background{
+    background-color: #00BFA6 !important;
+}
+.green-button{
+    background-color: #00BFA6 !important;
+    border-color: #00BFA6 !important;
+    transition: 0.3s;
+}
+.green-button:hover{
+    opacity: .9;
+} */
+
+p .footer{
+    color: whitesmoke;
+}
+
+.col-form-legend {
+    font-size: x-large;
+    font-weight: 500;
+}
+
+/*
+.hero-image{
+    /* background-image: none; *
+    background-image: url(/static/images/moon.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.half-width{
+    width: 80%;
+} */
+
+
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+
+@media screen and (min-width: 300px) {
+    .hero {
+        background-image: url(/static/images/moon.svg);
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: 50% 70%;
+    }
+
+    .half-width{
+        width: 50%;
+    }
+  }

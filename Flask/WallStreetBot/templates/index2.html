@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>meriditech</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+
+
+
+        <style>
+    /* Center the loader */
+    #loader {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 120px;
+      height: 120px;
+      margin: -76px 0 0 -76px;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #0c476e;
+      border-right: 16px solid #2abd9d;
+      border-left: 16px solid #824baf;
+      border-bottom: 16px solid #a5354d;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Add animation to "page content" */
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 }
+      to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom {
+      from{ bottom:-100px; opacity:0 }
+      to{ bottom:0; opacity:1 }
+    }
+
+    #myDiv {
+      display: none;
+      text-align: center;
+    }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+  <!-- <div class="hero-image"> -->
+
+
+    <!-- Navbar -->
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">meriditech is an automated, crowd sourced marketing platform for social media users to gain extra exposure by getting posted on our behalf. This is a beta version written by software developers.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://twitter.com/meriditech" class="text-white">Follow on Twitter</a></li>
+                <li><a href="https://www.instagram.com/meriditech/" class="text-white">Follow on Instagram</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="mailto:postup98@gmail.com" class="text-white">Email us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <strong>meriditech</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section id="hero" class="jumbotron bg-white hero">
+        <div class="container">
+          <h1 class="jumbotron-heading">Share with us</h1>
+          <p class="lead text-muted half-width">Create a post for the world to see.</p>
+          <a href="{{ url_for('learn') }}" class="btn btn-primary my-2 purple-button">Learn More</a>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <form action="" method="POST" enctype="multipart/form-data">
+                    <fieldset class="form-group row">
+                        <!-- <legend class="col-form-legend col-sm-1-12">Get posted now</legend> -->
+                        <legend class="col-form-legend col-sm-1-12">Post to Twitter</legend>
+                        <div class="col-sm-1-12">
+                        </div>
+
+                        <!-- <div class="col-xs-2 col-form-label">
+                            <label for="inputName" class="col-xs-2 col-form-label"></label>
+                                <input type="text" class="form-control" name="inputName" id="inputName"
+                                    placeholder="@Username">
+                        </div> -->
+
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1"></label>
+                          <textarea class="form-control" name="caption" id="caption" rows="3" placeholder="Caption"></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="filling"></label>
+                            <input type="file" class="form-control-file" name="img" id="img" accept="image/*" placeholder=""
+                                aria-describedby="fileHelpId">
+                            <small id="fileHelpId" class="form-text text-muted">Upload a png or jpg.</small>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary purple-button">Submit</button>
+                                <!-- <button type="submit" class="btn btn-primary green-button">Submit</button> -->
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                </form>
+
+
+
+
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                          <fieldset class="form-group row">
+                              <legend class="col-form-legend col-sm-1-12">Post to Instagram</legend>
+                              <div class="col-sm-1-12">
+                              </div>
+
+                              <!-- <div class="col-xs-2 col-form-label">
+                                  <label for="inputName" class="col-xs-2 col-form-label"></label>
+                                      <input type="text" class="form-control" name="inputName" id="inputName"
+                                          placeholder="@Username">
+                              </div> -->
+
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1"></label>
+                                <textarea class="form-control" name="caption_insta" id="caption_insta" rows="3" placeholder="Caption"></textarea>
+                              </div>
+
+
+                              <div class="form-group">
+                                  <label for="filling"></label>
+                                  <input type="file" class="form-control-file" name="img_insta" id="img_insta" accept="image/*" placeholder=""
+                                      aria-describedby="fileHelpId">
+                                  <small id="fileHelpId" class="form-text text-muted">Upload a png or jpg.</small>
+                              </div>
+
+                              <div class="form-group row">
+                                  <div class="col-sm-10">
+                                      <!-- <button type="submit" class="btn btn-primary purple-button">Submit</button> -->
+                                      <button type="submit" onclick="myFunction()" class="btn btn-primary purple-button">
+                                        <!-- <div id="loader"></div> -->
+
+                                        <!-- <div style="display:none;" id="myDiv" class="animate-bottom">
+                                          <h2>Tada!</h2>
+                                          <p>Some text in my newly loaded page..</p>
+                                        </div> -->
+
+                                        <script>
+                                        var myVar;
+
+                                        function myFunction() {
+                                          document.getElementById("loader").style.display = "block";
+                                          myVar = setTimeout(showPage(), 7000);
+                                        }
+
+                                        function showPage() {
+                                          // document.getElementById("loader").style.display = "block";
+                                          // document.querySelector('html').innerText = "<div <h2>Tada!</h2><p>Some text in my newly loaded page..</p></div>";
+                                          
+                                          document.location.href="/submitted.html", true;
+                                          // document.getElementById("myDiv").style.display = "block";
+                                          // alert("hi");
+                                        }
+                                        </script>
+
+                                        Submit</button>
+                                  </div>
+                                  <div id="loader"></div>
+                                  <!-- <div style="display:none;" id="myDiv" class="animate-bottom">
+                                    <h2>Tada!</h2>
+                                    <p>Some text in my newly loaded page..</p>
+                                  </div> -->
+                              </div>
+
+                          </fieldset>
+
+                      </form>
+
+
+
+
+
+
+            </div>
+          </div>
+        <!-- </div> -->
+
+
+{##}
+{#        <div class="article">#}
+{#        <h> caption here: </h>#}
+{#        <form method="POST">#}
+{#            <input name="caption" size="75">#}
+{#            <input type="submit">#}
+{#        </form>#}
+{#    </div>#}
+
+
+{#           <title>Upload new File</title>#}
+{#    <h1>Upload new File</h1>#}
+{#    <form method="POST" enctype=multipart/form-data>#}
+{#      <input type="file" name="imgg">#}
+{#      <input type=submit value=Upload>#}
+{#    </form>#}
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-muted footer bg-dark">
+        <div class="container">
+            <p>@meriditech. We post your content.</p>
+            <p>Marketing made easy. <a href="#">Follow us.</a> or read our <a
+                    href="#">getting started guide</a>.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+</body>
+
+</html>

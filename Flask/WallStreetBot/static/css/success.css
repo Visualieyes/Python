@@ -1,0 +1,51 @@
+html, body {
+    /* margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: purple;
+    text-align: center; */
+    background: white;
+  }
+  
+  
+  h1 {
+    font-size: xx-large;
+    color: black;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    left: 500px;
+    top: 20px;
+  }
+  
+  h3 {
+    font-size: x-large;
+    color: black;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    left: 200px;
+    top: 60px;
+  }
+  
+  h5 {
+    font-size: large;
+    color: black;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    left: 500px;
+    top: 80px;
+  }
+  
+  h6 {
+    font-size: large;
+    color: black;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    left: 500px;
+    top: 100px;
+  }
